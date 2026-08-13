@@ -1,0 +1,353 @@
+# Instincts generated from https://github.com/cubxxw/sig-release
+# Generated: 2026-07-02T23:16:41.240Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: sig-release-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/cubxxw/sig-release
+---
+
+# Sig Release Commit Length
+
+## Action
+
+Keep commit messages concise (~48 characters)
+
+## Evidence
+
+- Average commit message length: 48 chars
+- Based on 4 commits
+
+---
+id: sig-release-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/cubxxw/sig-release
+---
+
+# Sig Release Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: sig-release-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/cubxxw/sig-release
+---
+
+# Sig Release Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: sig-release-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/cubxxw/sig-release
+---
+
+# Sig Release Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: sig-release-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/cubxxw/sig-release
+---
+
+# Sig Release Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: sig-release-workflow-update-release-notes-draft
+trigger: "when doing update release notes draft"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/cubxxw/sig-release
+---
+
+# Sig Release Workflow Update Release Notes Draft
+
+## Action
+
+Follow the update-release-notes-draft workflow:
+1. Add or update multiple YAML files under releases/release-<version>/release-notes/maps/ for each PR included in the release.
+2. Regenerate or update releases/release-<version>/release-notes/release-notes-draft.json and release-notes-draft.md to reflect the latest changes.
+3. Optionally update session files under releases/release-<version>/release-notes/sessions/ (e.g., when running automation tools).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: releases/release-*/release-notes/maps/pr-*-map.yaml, releases/release-*/release-notes/release-notes-draft.json, releases/release-*/release-notes/release-notes-draft.md
+
+---
+id: sig-release-workflow-refine-individual-release-note-entries
+trigger: "when doing refine individual release note entries"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/cubxxw/sig-release
+---
+
+# Sig Release Workflow Refine Individual Release Note Entries
+
+## Action
+
+Follow the refine-individual-release-note-entries workflow:
+1. Edit one or a few YAML files under releases/release-<version>/release-notes/maps/ for targeted PRs.
+2. Regenerate releases/release-<version>/release-notes/release-notes-draft.json and release-notes-draft.md to sync changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: releases/release-*/release-notes/maps/pr-*-map.yaml, releases/release-*/release-notes/release-notes-draft.json, releases/release-*/release-notes/release-notes-draft.md
+
+---
+id: sig-release-naming-files-kebab-case
+trigger: "When creating or renaming a file in the repository"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Naming Files Kebab Case
+
+## Action
+
+Use kebab-case for file names (e.g., release-notes-draft.md)
+
+## Evidence
+
+- Pattern in files: releases/release-*/release-notes/release-notes-draft.md
+- Pattern in files: releases/release-*/release-notes/maps/pr-*-map.yaml
+
+---
+id: sig-release-naming-functions-camelCase
+trigger: "When defining a function in TypeScript code"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Naming Functions CamelCase
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle: functions: camelCase
+
+---
+id: sig-release-naming-classes-PascalCase
+trigger: "When defining a class in TypeScript code"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Naming Classes PascalCase
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle: classes: PascalCase
+
+---
+id: sig-release-naming-constants-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant in TypeScript code"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Naming Constants SCREAMING_SNAKE_CASE
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle: constants: SCREAMING_SNAKE_CASE
+
+---
+id: sig-release-imports-relative
+trigger: "When importing modules in TypeScript code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Imports Relative
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle: importStyle: relative
+
+---
+id: sig-release-exports-named
+trigger: "When exporting modules or functions in TypeScript code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Exports Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle: exportStyle: named
+
+---
+id: sig-release-git-commit-freeform
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Git Commit Freeform
+
+## Action
+
+Use a concise, freeform message without a required prefix; summarize the change in ~50 characters
+
+## Evidence
+
+- Seen in commit: 'Release Notes draft for k/k v1.37.0-alpha.2'
+- Seen in commit: 'Refine release-notes for v1.37.0-alpha.2'
+- Pattern: commits are freeform, average length 48
+
+---
+id: sig-release-workflow-update-release-notes-draft
+trigger: "When preparing or refining the release notes draft for a new or ongoing Kubernetes release (e.g., alpha, beta, or final)"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Workflow Update Release Notes Draft
+
+## Action
+
+Add or update multiple YAML files under releases/release-<version>/release-notes/maps/ for each PR included in the release, then regenerate or update releases/release-<version>/release-notes/release-notes-draft.json and release-notes-draft.md, and optionally update session files under releases/release-<version>/release-notes/sessions/
+
+## Evidence
+
+- Workflow: update-release-notes-draft
+- Pattern in files: releases/release-*/release-notes/maps/pr-*-map.yaml
+- Pattern in files: releases/release-*/release-notes/release-notes-draft.json
+- Pattern in files: releases/release-*/release-notes/release-notes-draft.md
+- Pattern in files: releases/release-*/release-notes/sessions/maps-*.json
+
+---
+id: sig-release-workflow-refine-individual-release-note-entries
+trigger: "When a reviewer or contributor wants to refine or correct details for specific PRs in the release notes draft"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Workflow Refine Individual Release Note Entries
+
+## Action
+
+Edit one or a few YAML files under releases/release-<version>/release-notes/maps/ for targeted PRs, then regenerate releases/release-<version>/release-notes/release-notes-draft.json and release-notes-draft.md to sync changes
+
+## Evidence
+
+- Workflow: refine-individual-release-note-entries
+- Pattern in files: releases/release-*/release-notes/maps/pr-*-map.yaml
+- Pattern in files: releases/release-*/release-notes/release-notes-draft.json
+- Pattern in files: releases/release-*/release-notes/release-notes-draft.md
+
+---
+id: sig-release-testing-location-separate
+trigger: "When adding or updating tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: cubxxw/sig-release
+---
+
+# Sig Release Testing Location Separate
+
+## Action
+
+Place test files in a separate location from source files, following the repository's folder structure
+
+## Evidence
+
+- Pattern in architecture: testLocation: separate
+
